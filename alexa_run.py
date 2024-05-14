@@ -1,39 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 #conda install conda-forge::speechrecognition
-
-
-# In[7]:
-
 
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit 
-
-
-# In[ ]:
-
 
 listner=sr.Recognizer()
 engine=pyttsx3.init()
 voices=engine.getProperty('voices')
 engine.setProperty('voice',voices[1].id)
 
-
-# In[ ]:
-
-
 def talk(text):
     engine.say(text)
     engine.runAndWait()
-
-
-# In[ ]:
-
 
 def take_command():
     try:
@@ -49,10 +30,6 @@ def take_command():
         pass
     return command
 
-
-# In[ ]:
-
-
 def run_alexa():
     command = take_command()
     print(command)
@@ -62,17 +39,5 @@ def run_alexa():
         pywhatkit.playonyt(song)
     else:
         talk("Please say the command again")
-        
-            
-
-
-# In[4]:
 
 run_alexa()
-
-
-# In[ ]:
-
-
-
-
